@@ -19,6 +19,22 @@ class PhoneNumber {
     required this.number,
   });
 
+  factory PhoneNumber.fromJson(Map<String, dynamic> json) => PhoneNumber(
+    countryISOCode: json['countryISOCode'],
+    countryCode: json['countryCode'],
+    number: json['number'],
+  );
+
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> toJson = <String, dynamic>{};
+
+    toJson['countryISOCode'] = countryISOCode;
+    toJson['countryCode'] = countryCode;
+    toJson['number'] = number;
+    return toJson;
+  }
+
   factory PhoneNumber.fromCompleteNumber({required String completeNumber}) {
     if (completeNumber == "") {
       return PhoneNumber(countryISOCode: "", countryCode: "", number: "");
