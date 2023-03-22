@@ -76,7 +76,7 @@ class _CountryPickerDialogState extends State<CountryPickerDialog> {
     final mediaWidth = MediaQuery.of(context).size.width;
     final width = widget.style?.width ?? mediaWidth;
     final defaultHorizontalPadding = 40.0;
-    final defaultVerticalPadding = 24.0;
+    final defaultVerticalPadding = MediaQuery.of(context).size.height * 0.2;
     return Dialog(
       insetPadding: EdgeInsets.symmetric(
           vertical: defaultVerticalPadding,
